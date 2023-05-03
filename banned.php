@@ -24,7 +24,7 @@
 	<h2>Account Terminated</h2>
 	<p>
 	<b>Your account has been permanently terminated for violating our rules.</b><br><b>Ban reason:</b> <?php echo $banreason; ?><br><br>
-	You may not make a new account at this time.<br>Want to appeal? Join our <a href="//discord.gg/yuotueb">Discord</a>.
+	You may not make a new account at this time.<br>Want to appeal? Join our <a href="//discord.gg/WaltTube">Discord</a>.
 </p>
 		</div>
 	<?php include("footer.php") ?>

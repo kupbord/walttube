@@ -167,9 +167,9 @@
             ?>
             <div class="card message">
                 <div class="card-header">What's New</div>
-                YuoTueb has returned with an improved source code. The uploader now creates thumbnails as images and compresses videos. 
+jesse we dont eat our sodium_crypto_kx_publickey
             </div>
-            <iframe width="300" height="300" style="border:none" src="ugc.html" name="kupbord"></iframe>
+            <!-- <iframe width="300" height="300" style="border:none" src="ugc.html" name="kupbord"></iframe> -->
         </div>
         </div>
     <?php include("footer.php") ?>

@@ -5,7 +5,7 @@
 <head>
 <?php include 'global.php';?>
 
-	<title>YuoTueb - Broadcast Yourself.</title>
+	<title>WaltTube - Broadcast Yourself.</title>
 	<script type="text/javascript" src="https://web.archive.org/web/20070510170208js_/http://www.youtube.com/js/AJAX_yts1175144889.js"></script>
 	<script type="text/javascript" src="https://web.archive.org/web/20070510170208js_/http://www.youtube.com/js/ui_yts1169707248.js"></script>
 	<script type="text/javascript" src="https://web.archive.org/web/20070510170208js_/http://www.youtube.com/js/components_yts1175144889.js"></script>

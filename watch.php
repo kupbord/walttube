@@ -33,7 +33,7 @@
 <meta property="twitter:player:width" content="1280">
 <meta property="twitter:player:height" content="720">
 <meta name="title" content="'.$row['videotitle'].'">
-<title>'.$row['videotitle'].' - YuoTueb</title> ';
+<title>'.$row['videotitle'].' - WaltTube</title> ';
 }
 $statement->close();
 ?>
@@ -108,8 +108,8 @@ error_reporting(E_ALL);
         }
         ?>
 
-<div class="topRight" style="margin-left: 500px; margin-top: -336px;">
-<div class="card gray">
+<div class="topRight" style="margin-left: 500px; margin-bottom:100px; margin-top: -386px;">
+<div class="card sgray">
         <?php
             $stmt = $mysqli->prepare("SELECT * FROM videos WHERE vid = ?");
             $stmt->bind_param("s", $_GET['v']);
@@ -117,12 +117,13 @@ error_reporting(E_ALL);
             $result = $stmt->get_result();
             if($result->num_rows === 0) exit('No rows');
             while($row = $result->fetch_assoc()) {
-                echo "Added: " . $row['date'] . "<br>";
+                echo "<small>Added: " . $row['date'] . "<br></small>";
+                echo "From: <strong><a href='profile.php?user=" . $row['author'] . "'>" . $row['author'] . "</a></strong>";
+                echo "<br>'" . $row['description'] . "'<br>";
                 echo "" . $row['views'] . " views<br>";
                 echo "" . $row['likes'] . " likes<br>";
-                echo "By: " . $row['author'] . "<br><br>";
-                echo "<br>'" . $row['description'] . "'<br>";
                 echo "<a href='likevideo.php?id=" . $row['vid'] . "'>Like Video</a>";
+                echo '<div style="float:right;margin-top:-75px;"><img src="btn_subscribe_sm_yellow_99x16.gif"></div>';
             }
 
         ?>  

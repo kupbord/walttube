@@ -9,9 +9,9 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: index.php?err=This account has been suspended by YuoTueb staff<br/>Reason: ".$row['banreason']);
+                    header("Location: index.php?err=This account has been suspended by WaltTube staff<br/>Reason: ".$row['banreason']);
               }else{
-                echo $row['username']."'s Profile - YuoTueb";
+                echo $row['username']."'s Profile - WaltTube";
               }
             }
             $statement->close();

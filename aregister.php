@@ -110,7 +110,7 @@
                     $statement->execute();
                     $statement->close();
                     $mysqli->close();
-                    //echo "<br><br>Sucessfully made a YuoTueb account!<br><a href='./alogin.php'>CLICK HERE TO LOGIN</a>";
+                    //echo "<br><br>Sucessfully made a WaltTube account!<br><a href='./alogin.php'>CLICK HERE TO LOGIN</a>";
                     echo('<script>
                     window.location.href = "alogin.php";
                     </script>');

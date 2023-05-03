@@ -198,7 +198,7 @@ a {
     margin: 5px 0px;
     display: flex;
 }
-.card.blue, .card.gray{
+.card.blue, .card.gray, .card.sgray{
     padding: 10px;
     font-size: 12px;
 }
@@ -209,6 +209,9 @@ a {
 .card.gray{
     background-color: var(--card-gray-1);
     border: 1px solid var(--card-gray-2);
+}
+.card.sgray{
+    border: 1px solid var(--card-gray-2); 
 }
 .errmsg {
     color: var(--txtcol);
