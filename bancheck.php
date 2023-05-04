@@ -5,7 +5,7 @@
             $result = $statement->get_result();
             while($row = $result->fetch_assoc()) {
                 if ($row['banned'] == '1') {
-                    header("Location: banned.php");
+                    header("Location: /banned.php");
               }
             }
             ?>

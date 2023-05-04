@@ -8,6 +8,7 @@
                                           while($row = $result->fetch_assoc()) {
                                             $pid = idFromUser($row['receiver']);
                                             $rows = getSubscribers($row['receiver'], $mysqli);
+                                            $prof = getUserPic($pid);
 echo "
 <div class='user'>
 				    	<div class='user-info'>
@@ -24,7 +25,7 @@ echo "
                                 }
                             echo "
 					    </div>
-					    <div><a href='./profile.php?user=".$row["receiver"]."'><img class='user-picture' src='./pfp/".$pid."'></a></div>
+					    <div><a href='./profile.php?user=".$row["receiver"]."'><img class='user-picture' src='./pfp/".$prof."'></a></div>
 				    <hr>";
                                          }
                                         }

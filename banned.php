@@ -20,13 +20,13 @@
 			  }
             }
             ?>
-			<div class="banned">
-	<h2>Account Terminated</h2>
-	<p>
-	<b>Your account has been permanently terminated for violating our rules.</b><br><b>Ban reason:</b> <?php echo $banreason; ?><br><br>
-	You may not make a new account at this time.<br>Want to appeal? Join our <a href="//discord.gg/WaltTube">Discord</a>.
-</p>
-		</div>
+			<div>
+				<center>
+	<img src="banned.jpg" class="centeredimg"></div>
+		</center>
+	<br><div class="banned">
+	<h1>You have been banned!</h1><br>Ban reason: <?php echo $banreason; ?><br><br>
+		</p></div>
 	<?php include("footer.php") ?>
 </body>
 <?php $mysqli->close();?>

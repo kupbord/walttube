@@ -56,7 +56,7 @@ margin-left: -770px;
 			content: var(--rlogo);
 		} */
 	</style>
-	<a class="brand-logo" href="."><img class="lgoolol" width="150px" height="76px" src="image.png"></a>
+	<a class="brand-logo" href="."><img class="lgoolol" width="150px" height="76px" src="/logo.png"></a>
 	<?php
       if(!$loggedIn) {
         echo '<div class="menu-element"><strong><a href="./aregister.php">Sign Up</a></strong> | <a href="./alogin.php">Login</a> | <a href="./help.php">Help</a></div>';
@@ -67,7 +67,7 @@ margin-left: -770px;
 			    $result = $statement->get_result();
 			    if($result->num_rows === 0) exit('No rows');
 			    while($row = $result->fetch_assoc()) {
-			        echo "<div class=\"menu-element\"><strong>Hello, <a href=\"./profile.php?user=".$row["username"]."\">".$row["username"]."</a></strong> | <a href=\"./account.php\">Account</a> | <a href=\"./#\">History</a> | <a href=\"./help.php\">Help</a> | <a href=\"./alogout.php\">Log Out</a> | <a href=\"./#\">Site: <img src='en.png'></img></a></div>";
+			        echo "<div class=\"menu-element\"><strong>Hi, <a href=\"/profile.php?user=".$row["username"]."\">".$row["username"]."</a></strong> | <a href=\"/account.php\">Account</a> | <a href=\"/#\">History</a> | <a href=\"/help.php\">Help</a> | <a href=\"/alogout.php\">Log Out</a> | <a href=\"/#\">Site: <img src='/en.png'></img></a></div>";
 			    }
 			    $statement->close();
       }
@@ -75,17 +75,17 @@ margin-left: -770px;
 
 
 	<div class="container-flex header-buttons">
-	    <a class="col-generic header-button" href="./">Home</a>
-	    <a class="col-generic header-button" href="./videos.php">Videos</a>
-	    <a class="col-generic header-button" href="./channels.php">Channels</a>
-	    <a class="col-generic header-button" href="./community.php">Community</a>
-	    <a class="upload" href="./upload.php"><img src="buttonupload.png"></a>
+	    <a class="col-generic header-button" href="/">Home</a>
+	    <a class="col-generic header-button" href="/videos.php">Videos</a>
+	    <a class="col-generic header-button" href="/channels.php">Channels</a>
+	    <a class="col-generic header-button" href="/inbox">Messages</a>
+	    <a class="upload" href="/upload.php"><img src="/buttonupload.png"></a>
 	</div>
 	<div class="header">
 <div class="pobygo">
-<img class="pbg" src="poweredbygoogle.png" <="" div="">
+<img class="pbg" src="/img/bb.png" <="" div="">
 </div>
-<form method="get" action="results.php">
+<form method="get" action="/results.php">
 	    <center><input class="test" type="text" placeholder="" name="q"> <select class="search-type" name="search_type">
 						<option value="search_videos">Videos</option>
 						<option value="search_users">Channels</option>

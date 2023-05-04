@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid;
+    padding: 3px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+.message:hover {
+    background-color: #ddd;
+}
