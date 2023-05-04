@@ -189,7 +189,7 @@ error_reporting(E_ALL);
 
         echo '<h3 style="
     margin-top: 32px;
-">Comments &amp; Responses</h3>';
+"></h3>';
 ?>
 
 
