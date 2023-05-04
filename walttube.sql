@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 06:26 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: localhost:3306
+-- Generation Time: May 04, 2023 at 11:11 PM
+-- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
+-- PHP Version: 8.1.2-1ubuntu2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `retrotube`
+-- Database: `walttube`
 --
 
 -- --------------------------------------------------------
@@ -51,14 +51,30 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `inbox`
+--
+
+CREATE TABLE `inbox` (
+  `sender` varchar(255) NOT NULL,
+  `reciever` varchar(255) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `content` varchar(1000) NOT NULL,
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `likes`
 --
 
 CREATE TABLE `likes` (
-  `like_id` int(11) NOT NULL,
-  `uid` int(11) NOT NULL,
-  `vid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id` int(11) NOT NULL,
+  `sender` varchar(255) NOT NULL,
+  `reciever` varchar(255) NOT NULL,
+  `type` varchar(1) NOT NULL DEFAULT 'l'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -83,11 +99,12 @@ CREATE TABLE `users` (
   `date` datetime NOT NULL,
   `subscribers` int(11) NOT NULL DEFAULT 0,
   `username` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL DEFAULT 'v',
+  `description` varchar(255) NOT NULL DEFAULT 'No description.',
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `pfp` varchar(255) NOT NULL DEFAULT 'acc.jpg',
-  `is_admin` int(1) NOT NULL DEFAULT 0
+  `pfp` varchar(255) NOT NULL DEFAULT 'default.png',
+  `banned` int(1) NOT NULL DEFAULT 0,
+  `banreason` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -109,6 +126,18 @@ CREATE TABLE `videos` (
   `featured` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `views`
+--
+
+CREATE TABLE `views` (
+  `id` int(11) NOT NULL,
+  `viewer` varchar(255) NOT NULL,
+  `videoid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -125,6 +154,13 @@ ALTER TABLE `announcements`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `inbox`
+--
+ALTER TABLE `inbox`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `subscribers`
@@ -158,6 +194,12 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `inbox`
+--
+ALTER TABLE `inbox`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
